@@ -1,0 +1,12 @@
+version: '3'
+services:
+  tentacle:
+    privileged: true
+    image: octopusdeploy/tentacle
+    environment:
+      ServerApiKey: API-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+      TargetEnvironment: OnSite
+      TargetRole: apphost,db
+      ServerUrl: http://172.17.0.1:8080
+      ServerPort: 10943
+      ACCEPT_EULA: !!str Y
