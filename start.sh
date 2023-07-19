@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd server
+pushd server
 
 docker compose pull
 docker compose up -d
@@ -22,3 +22,5 @@ docker compose exec octopus sh -c 'echo "provider_installation {\nfilesystem_mir
 docker compose exec octopus sh -c 'curl https://packages.microsoft.com/keys/microsoft.asc | gpg --yes --dearmor --output /usr/share/keyrings/microsoft.gpg'
 docker compose exec octopus sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/microsoft.gpg] https://packages.microsoft.com/repos/microsoft-debian-bullseye-prod bullseye main" > /etc/apt/sources.list.d/microsoft.list'
 docker compose exec octopus sh -c 'apt update && apt install -y powershell'
+
+popd
