@@ -14,7 +14,7 @@ services:
       DB_CONNECTION_STRING: Server=mssql,1433;Database=Octopus;User Id=SA;Password=Password01!;ConnectRetryCount=6
       CONNSTRING: Server=mssql,1433;Database=Octopus;User Id=SA;Password=Password01!;ConnectRetryCount=6
       MASTER_KEY: 6EdU6IWsCtMEwk0kPKflQQ==
-    image: octopusdeploy/octopusdeploy:2023
+    image: octopusdeploy/octopusdeploy
     labels:
       autoheal: true
     depends_on:
