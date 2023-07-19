@@ -19,9 +19,16 @@ services:
       autoheal: true
     depends_on:
       - mssql
+    networks:
+      - octopus
   mssql:
     environment:
       ACCEPT_EULA: Y
       SA_PASSWORD: Password01!
       MSSQL_PID: Express
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+    networks:
+      - octopus
+networks:
+  octopus:
+    name: octopus

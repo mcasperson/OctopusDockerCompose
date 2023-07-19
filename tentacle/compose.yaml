@@ -7,6 +7,11 @@ services:
       ServerApiKey: API-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
       TargetEnvironment: OnSite
       TargetRole: apphost,db
-      ServerUrl: http://172.17.0.1:8080
+      ServerUrl: http://octopus:8080
       ServerPort: 10943
       ACCEPT_EULA: !!str Y
+    networks:
+      - octopus
+networks:
+  octopus:
+    name: octopus
