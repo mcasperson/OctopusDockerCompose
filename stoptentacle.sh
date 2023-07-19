@@ -1,5 +1,5 @@
 pushd tentacle
 
-docker compose down -d
+docker compose down
 
 popd
