@@ -5,6 +5,9 @@ pushd server
 docker compose pull
 docker compose up -d
 
+# Create the Octopus database
+docker compose exec mssql sh -c '/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U SA -P Password01! -Q "CREATE DATABASE Octopus;"'
+
 # Install all the tools we'll need to perform deployments
 docker compose exec octopus sh -c 'curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs'
 docker compose exec octopus sh -c 'apt-get install -y jq git dnsutils zip gnupg software-properties-common python3 python3-pip'
