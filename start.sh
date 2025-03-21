@@ -2,7 +2,6 @@
 
 pushd server
 
-docker compose pull
 docker compose up -d
 
 # Create the Octopus database
