@@ -24,6 +24,7 @@ services:
   mssql:
     ports:
       - "1433:1433"
+    pull_policy: always
     environment:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: Password01!
@@ -31,6 +32,10 @@ services:
     image: mcr.microsoft.com/mssql/server:2022-latest
     networks:
       - octopus
+    volumes:
+      - sqlvolume:/var/opt/mssql
 networks:
   octopus:
     name: octopus
+volumes:
+  sqlvolume:
