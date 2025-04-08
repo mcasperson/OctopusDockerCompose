@@ -2,7 +2,7 @@ services:
   octopus:
     privileged: true
     ports:
-      - "8080:8083"
+      - "8083:8080"
       - "10943:10943"
     environment:
       ADMIN_API_KEY: API-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
