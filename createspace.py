@@ -30,4 +30,29 @@ response = requests.post(uri, headers=headers, json=space)
 print(response.text)
 response.raise_for_status()
 
+# Create the worker pool
+uri = '{0}/{1}/workerpools'.format(octopus_server_uri, response.json()['Id'])
+worker_pool = {
+    "Name":"Hosted Ubuntu",
+    "Description":"",
+    "SortOrder":-1,
+    "IsDefault":False,
+    "CanAddWorkers":False,
+    "WorkerPoolType":"StaticWorkerPool"
+}
+response = requests.post(uri, headers=headers, json=worker_pool)
+response.raise_for_status()
+
+worker_pool = {
+    "Name":"Hosted Windows",
+    "Description":"",
+    "SortOrder":-1,
+    "IsDefault":False,
+    "CanAddWorkers":False,
+    "WorkerPoolType":"StaticWorkerPool"
+}
+response = requests.post(uri, headers=headers, json=worker_pool)
+response.raise_for_status()
+
+
 print(space_name)
