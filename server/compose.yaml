@@ -16,6 +16,7 @@ services:
       OCTOPUS_SERVER_BASE64_LICENSE: ${OCTOPUS_SERVER_BASE64_LICENSE}
     image: octopusdeploy/octopusdeploy
     pull_policy: always
+    restart: always  
     labels:
       autoheal: true
     depends_on:
@@ -24,8 +25,9 @@ services:
       - octopus
   mssql:
     ports:
-      - "1433:1433"
+      - "1533:1433"
     pull_policy: always
+    restart: always
     environment:
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: Password01!
