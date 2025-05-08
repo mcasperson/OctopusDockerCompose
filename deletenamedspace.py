@@ -21,6 +21,11 @@ spaces = requests.get(uri, headers=headers)
 space_id = [space['Id'] for space in spaces.json()["Items"] if space['Name'] == space_name]
 
 if space_id:
+    stop_queue = {'TaskQueueStopped': True}
+    uri = '{0}/spaces/{1}'.format(octopus_server_uri, space_id)
+    response = requests.put(uri, headers=headers, json=stop_queue)
+    response.raise_for_status()
+
     uri = '{0}/spaces/{1}'.format(octopus_server_uri, space_id[0])
     response = requests.delete(uri, headers=headers)
     print(response.text)
