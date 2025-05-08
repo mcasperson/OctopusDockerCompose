@@ -18,7 +18,7 @@ manager_team_members = [] # Either this or managers_teams must be populated othe
 uri = '{0}/spaces'.format(octopus_server_uri)
 spaces = requests.get(uri, headers=headers)
 
-space_id = next(space for space in spaces.json()["Items"] if space['Name'] == space_name)
+space = next(space for space in spaces.json()["Items"] if space['Name'] == space_name)
 
 if space_id:
     space['TaskQueueStopped'] = True
