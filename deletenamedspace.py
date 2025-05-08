@@ -23,4 +23,5 @@ space_id = [space['Id'] for space in spaces.json()["Items"] if space['Name'] == 
 if space_id:
     uri = '{0}/spaces/{1}'.format(octopus_server_uri, space_id[0])
     response = requests.delete(uri, headers=headers)
+    print(response.text)
     response.raise_for_status()
