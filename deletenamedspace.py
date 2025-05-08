@@ -25,6 +25,7 @@ if space_id:
     uri = '{0}/spaces/{1}'.format(octopus_server_uri, space_id)
     print(uri)
     response = requests.put(uri, headers=headers, json=stop_queue)
+    print(response.text)
     response.raise_for_status()
 
     response = requests.delete(uri, headers=headers)
