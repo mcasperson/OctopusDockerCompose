@@ -4,4 +4,4 @@ on_tcp_connect:
         config:
           enforce: true
           ip_policies:
-            - ipp_2vMyMo3Vg9adw88MN6G7UGd57OM
+            - ipp_2yF83XsF1CQ8YjXHq9VQQztByU2
