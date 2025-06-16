@@ -1,0 +1,8 @@
+# ngrok http --url=mattc-octopus.ngrok.app 8083 --traffic-policy-file policy.yml
+on_tcp_connect:
+  - actions:
+      - type: restrict-ips
+        config:
+          enforce: true
+          allow:
+            - 51.8.40.170/32
