@@ -6,3 +6,4 @@ on_tcp_connect:
           enforce: true
           allow:
             - 51.8.40.170/32
+            - 203.30.6.54/32

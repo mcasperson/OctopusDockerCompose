@@ -3,6 +3,7 @@ services:
     privileged: true
     ports:
       - "8083:8080"
+      - "8443:8443"
       - "10953:10943"
     environment:
       ADMIN_API_KEY: API-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
