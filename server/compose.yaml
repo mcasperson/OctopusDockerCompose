@@ -15,6 +15,8 @@ services:
       CONNSTRING: Server=mssql,1433;Database=Octopus;User Id=SA;Password=Password01!;ConnectRetryCount=6
       MASTER_KEY: 6EdU6IWsCtMEwk0kPKflQQ==
       OCTOPUS_SERVER_BASE64_LICENSE: ${OCTOPUS_SERVER_BASE64_LICENSE}
+      HTTP_PROXY: ${OCTOPUS_PROXY}
+      HTTPS_PROXY: ${OCTOPUS_PROXY}
     image: octopusdeploy/octopusdeploy
     pull_policy: always
     restart: always  
