@@ -11,7 +11,7 @@ else
 fi
 
 if [ -n "$2" ]; then
-  echo "$2" | base64 -d > /usr/local/share/ca-certificates/mitmproxy.crt
+  docker compose exec octopus sh -c "echo \"$2\" | base64 -d > /usr/local/share/ca-certificates/mitmproxy.crt"
   docker compose exec octopus sh -c 'apt-get install -y ca-certificates'
   docker compose exec octopus sh -c 'update-ca-certificates'
 fi
