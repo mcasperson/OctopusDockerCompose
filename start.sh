@@ -4,7 +4,13 @@ pushd server
 
 echo "Proxy is ${1:-UNSET}"
 
-OCTOPUS_PROXY=$1 docker compose up -d --build
+if [ -z "$1" ]; then
+  docker compose up -d --build
+else
+  OCTOPUS_HTTP_PROXY="http://$1" OCTOPUS_HTTPS_PROXY="https://$1" docker compose up -d --build
+fi
+
+
 
 # Create the Octopus database
 docker compose exec mssql sh -c '/opt/mssql-tools18/bin/sqlcmd -C -S localhost -U SA -P Password01! -Q "CREATE DATABASE Octopus;"'
