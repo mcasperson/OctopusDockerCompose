@@ -7,3 +7,5 @@ A Docker compose stack that uses the latest Octopus Docker image and installs a 
 * Azure CLI
 
 To start the stack, run `start.sh`.
+
+To capture network traffic, run mitmproxy, and start octopus with `./start.sh http://172.17.0.1:8080`
