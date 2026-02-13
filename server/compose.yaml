@@ -1,5 +1,7 @@
 services:
   octopus:
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     privileged: true
     ports:
       - "8083:8080"

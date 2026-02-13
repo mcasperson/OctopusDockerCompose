@@ -12,4 +12,4 @@ To capture network traffic:
 
 1. Run `mitmproxy`
 2. Get the certificate with `cat ~/.mitmproxy/mitmproxy-ca-cert.pem | base64 -w0`
-3. Start octopus with `./start.sh 172.17.0.1:8080 BASE64ENCODEDCERT`
+3. Start octopus with `./start.sh `host.docker.internal`:8080 BASE64ENCODEDCERT`
