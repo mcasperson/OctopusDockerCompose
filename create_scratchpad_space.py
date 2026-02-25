@@ -18,8 +18,6 @@ def get_by_name(uri, name):
 # Define Octopus server variables
 octopus_server_uri = 'http://localhost:8083'
 octopus_api_key = 'API-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'
-#octopus_server_uri = 'https://mattc.octopus.app'
-#octopus_api_key = os.getenv("OCTOPUS_CLI_API_KEY")
 headers = {'X-Octopus-ApiKey': octopus_api_key}
 
 # Define working variables
