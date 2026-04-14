@@ -1,5 +1,6 @@
 services:
   octopus:
+    platform: linux/amd64
     extra_hosts:
       - "host.docker.internal:host-gateway"
     privileged: true
@@ -29,6 +30,7 @@ services:
     networks:
       - octopus
   mssql:
+    platform: linux/amd64
     ports:
       - "1533:1433"
     pull_policy: always
