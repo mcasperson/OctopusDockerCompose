@@ -26,6 +26,7 @@ docker compose exec octopus sh -c 'apt-get install -y jq git dnsutils zip gnupg 
 docker compose exec octopus sh -c 'pip install slack_sdk'
 docker compose exec octopus sh -c 'pip install pycryptodome'
 docker compose exec octopus sh -c 'apt update; apt install -y --no-install-recommends gnupg curl ca-certificates apt-transport-https'
+docker compose exec octopus sh -c 'curl -L https://github.com/OctopusDeploy/cli/raw/main/scripts/install.sh | bash'
 docker compose exec octopus sh -c 'wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor > /usr/share/keyrings/hashicorp-archive-keyring.gpg'
 docker compose exec octopus sh -c 'echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" > /etc/apt/sources.list.d/hashicorp.list'
 docker compose exec octopus sh -c 'apt update --allow-insecure-repositories; apt-get install -y terraform'
